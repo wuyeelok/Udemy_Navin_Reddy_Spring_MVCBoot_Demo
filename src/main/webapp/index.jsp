@@ -10,10 +10,10 @@
 	<h1>Welcome to Kenneth</h1>
 
 	<form action="add" method="post">
-		<label for="num1">Enter 1st number : </label> <input type="text"
-			name="num1" id="num1" /><br> <label for="num2">Enter
-			2nd number : </label> <input type="text" name="num2" id="num2" /><br> <input
-			type="submit" value="Add Them UP" />
+		<label for="num1">Enter 1st number : </label> <input type="number"
+			name="num1" id="num1" required /><br> <label for="num2">Enter
+			2nd number : </label> <input type="number" name="num2" id="num2" required /><br>
+		<input type="submit" value="Add Them UP" />
 	</form>
 </body>
 </html>
