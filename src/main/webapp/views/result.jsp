@@ -7,6 +7,6 @@
 <title>Welcome to Kenneth</title>
 </head>
 <body>
-	<p>Result is: ${num3}</p>
+	<p>Result is: ${alien}</p>
 </body>
 </html>
