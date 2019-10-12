@@ -27,7 +27,7 @@ public class HomeController {
 	}
 
 	@PostMapping("addAlien")
-	public String addAlien(@ModelAttribute ReddyAlien a) {
+	public String addAlien(@ModelAttribute("a1") ReddyAlien a) {
 
 		return "result";
 	}

@@ -7,6 +7,6 @@
 <title>Welcome to Kenneth</title>
 </head>
 <body>
-	<p>Result is: ${reddyAlien}</p>
+	<p>Result is: ${a1}</p>
 </body>
 </html>
