@@ -8,5 +8,7 @@
 </head>
 <body>
 	<p>Result is: ${a1}</p>
+	
+	<p>Welcome ${name}</p>
 </body>
 </html>
