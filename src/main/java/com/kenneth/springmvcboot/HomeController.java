@@ -3,10 +3,10 @@ package com.kenneth.springmvcboot;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kenneth.springmvcboot.model.Alien;
 import com.kenneth.springmvcboot.model.ReddyAlien;
 
 @Controller
@@ -27,13 +27,7 @@ public class HomeController {
 	}
 
 	@PostMapping("addAlien")
-	public String addAlien(@RequestParam("aid") int aid, @RequestParam("aname") String aname, Model m) {
-
-		Alien a = new ReddyAlien();
-		a.setAid(aid);
-		a.setAname(aname);
-
-		m.addAttribute("alien", a);
+	public String addAlien(@ModelAttribute ReddyAlien a) {
 
 		return "result";
 	}
