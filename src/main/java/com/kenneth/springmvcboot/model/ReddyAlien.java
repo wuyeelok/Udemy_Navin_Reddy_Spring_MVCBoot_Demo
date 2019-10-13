@@ -5,6 +5,11 @@ public class ReddyAlien implements Alien {
 	private int aid;
 	private String aname;
 
+	public ReddyAlien(int aid, String aname) {
+		this.aid = aid;
+		this.aname = aname;
+	}
+
 	@Override
 	public int getAid() {
 		return aid;
