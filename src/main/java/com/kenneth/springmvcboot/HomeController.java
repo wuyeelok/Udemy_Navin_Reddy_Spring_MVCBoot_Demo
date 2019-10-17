@@ -44,6 +44,9 @@ public class HomeController {
 	@PostMapping("addAlien")
 	public String addAlien(@ModelAttribute("a1") ReddyAlien a) {
 		System.out.println("calling addAlien method");
+
+		this.repo.save(a);
+
 		return "result";
 	}
 
