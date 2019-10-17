@@ -1,9 +1,20 @@
 package com.kenneth.springmvcboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "reddyalien")
 public class ReddyAlien implements Alien {
 
+	@Id
 	private int aid;
 	private String aname;
+
+	public ReddyAlien() {
+
+	}
 
 	public ReddyAlien(int aid, String aname) {
 		this.aid = aid;
