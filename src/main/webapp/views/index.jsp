@@ -13,7 +13,13 @@
 		<label for="aid">Enter your id : </label> <input type="number"
 			name="aid" id="aid" required /><br> <label for="aname">Enter
 			your name : </label> <input type="text" name="aname" id="aname" required /><br>
-		<input type="submit" value="Add Them UP" />
+		<input type="submit" value="Submit Form" />
+	</form>
+	<hr>
+	<form action="getAlien" method="get">
+		<label for="alienId">Enter alien id: </label> <input type="number"
+			id="alienId" name="alienId"> <br> <input type="submit"
+			value="Submit Form" />
 	</form>
 </body>
 </html>

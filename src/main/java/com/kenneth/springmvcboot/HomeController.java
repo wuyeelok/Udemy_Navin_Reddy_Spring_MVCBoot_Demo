@@ -54,4 +54,12 @@ public class HomeController {
 
 		return "showAliens";
 	}
+
+	@GetMapping("getAlien")
+	public String getAlien(@RequestParam("alienId") int aid, Model m) {
+
+		m.addAttribute("result", this.repo.getOne(aid));
+
+		return "showAliens";
+	}
 }
