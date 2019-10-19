@@ -65,4 +65,12 @@ public class HomeController {
 
 		return "showAliens";
 	}
+
+	@GetMapping("getAlienByName")
+	public String getAlienByName(@RequestParam("aname") String aname, Model m) {
+
+		m.addAttribute("result", this.repo.findByAnameOrderByAidDesc(aname));
+
+		return "showAliens";
+	}
 }

@@ -21,5 +21,11 @@
 			id="alienId" name="alienId"> <br> <input type="submit"
 			value="Submit Form" />
 	</form>
+	<hr>
+	<form action="getAlienByName" method="get">
+		<label for="aname">Enter alien name: </label> <input type="text"
+			id="aname" name="aname"> <br> <input type="submit"
+			value="Submit Form" />
+	</form>
 </body>
 </html>
