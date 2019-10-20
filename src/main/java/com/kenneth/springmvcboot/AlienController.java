@@ -23,7 +23,7 @@ public class AlienController {
 		this.repo = repo;
 	}
 
-	@GetMapping("aliens")
+	@GetMapping(path = "aliens", produces = { "application/xml" })
 	public List<Alien> getAliens(Model m) {
 
 		List<ReddyAlien> reddyAliens = this.repo.findAll();
