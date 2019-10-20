@@ -4,16 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.kenneth.springmvcboot.model.Alien;
 import com.kenneth.springmvcboot.model.ReddyAlien;
 
-@Controller
+@RestController
 public class AlienController {
 
 	private ReddyAlienRepo repo;
@@ -24,7 +23,6 @@ public class AlienController {
 	}
 
 	@GetMapping("aliens")
-	@ResponseBody
 	public List<Alien> getAliens(Model m) {
 
 		List<ReddyAlien> reddyAliens = this.repo.findAll();
@@ -39,7 +37,6 @@ public class AlienController {
 	}
 
 	@GetMapping("alien/{aid}")
-	@ResponseBody
 	public Alien getAlien(@PathVariable("aid") int aid) {
 
 		Alien a = this.repo.findById(aid).orElse(new ReddyAlien(0, ""));
