@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kenneth.springmvcboot.model.Alien;
@@ -42,5 +43,15 @@ public class AlienController {
 		Alien a = this.repo.findById(aid).orElse(new ReddyAlien(0, ""));
 
 		return a;
+	}
+
+	@PostMapping("alien")
+	public Alien addAlien(Alien alien) {
+
+		ReddyAlien ra = new ReddyAlien(alien.getAid(), alien.getAname());
+
+		this.repo.save(ra);
+
+		return alien;
 	}
 }
