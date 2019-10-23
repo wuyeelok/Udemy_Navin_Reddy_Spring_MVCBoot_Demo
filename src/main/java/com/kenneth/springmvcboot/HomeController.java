@@ -22,13 +22,11 @@ public class HomeController {
 
 	@ModelAttribute
 	public void modelData(Model m) {
-		System.out.println("calling model data method");
 		m.addAttribute("name", "XXXX");
 	}
 
 	@GetMapping("/")
 	public String home() {
-		System.out.println("calling home method");
 		return "index";
 	}
 
@@ -43,7 +41,6 @@ public class HomeController {
 
 	@PostMapping("addAlien")
 	public String addAlien(@ModelAttribute("a1") ReddyAlien a) {
-		System.out.println("calling addAlien method");
 
 		this.repo.save(a);
 

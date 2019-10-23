@@ -17,4 +17,19 @@ public class LoggingAspect {
 		LOGGER.trace("AlienController getAliens method called from aspect");
 	}
 
+	@Before("execution(public String com.kenneth.springmvcboot.HomeController.home())")
+	public void logIndexPage() {
+		LOGGER.trace("Calling HomeController home method");
+	}
+
+	@Before("execution(public void com.kenneth.springmvcboot.HomeController.modelData(..))")
+	public void logModelData() {
+		LOGGER.trace("calling @ModelAttribute model data method");
+	}
+
+	@Before("execution(public String com.kenneth.springmvcboot.HomeController.addAlien(..))")
+	public void logAddAlien() {
+		LOGGER.trace("calling HomeController addAlien method");
+	}
+
 }
