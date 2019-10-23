@@ -1,5 +1,6 @@
 package com.kenneth.springmvcboot;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -13,8 +14,13 @@ public class LoggingAspect {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoggingAspect.class);
 
 	@Before("execution(public java.util.List<com.kenneth.springmvcboot.model.Alien> com.kenneth.springmvcboot.AlienController.getAliens(..))")
-	public void log() {
+	public void logBefore() {
 		LOGGER.trace("AlienController getAliens method called from aspect");
+	}
+
+	@After("execution(public java.util.List<com.kenneth.springmvcboot.model.Alien> com.kenneth.springmvcboot.AlienController.getAliens(..))")
+	public void logAfter() {
+		LOGGER.trace("After AlienController getAliens method called from aspect");
 	}
 
 	@Before("execution(public String com.kenneth.springmvcboot.HomeController.home())")
