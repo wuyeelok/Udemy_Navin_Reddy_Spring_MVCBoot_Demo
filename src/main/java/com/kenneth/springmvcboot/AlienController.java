@@ -32,7 +32,7 @@ public class AlienController {
 	public List<Alien> getAliens(Model m) {
 
 		LOGGER.info("Fetching aliens");
-
+		// int i = 9 / 0;
 		List<ReddyAlien> reddyAliens = this.repo.findAll();
 
 		/*

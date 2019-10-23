@@ -1,6 +1,8 @@
 package com.kenneth.springmvcboot;
 
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -20,7 +22,17 @@ public class LoggingAspect {
 
 	@After("execution(public java.util.List<com.kenneth.springmvcboot.model.Alien> com.kenneth.springmvcboot.AlienController.getAliens(..))")
 	public void logAfter() {
-		LOGGER.trace("After AlienController getAliens method called from aspect");
+		LOGGER.trace("After AlienController getAliens method called from aspect no matter there is exception or not");
+	}
+
+	@AfterReturning("execution(public java.util.List<com.kenneth.springmvcboot.model.Alien> com.kenneth.springmvcboot.AlienController.getAliens(..))")
+	public void logSuccess() {
+		LOGGER.trace("AlienController getAliens method executed without error");
+	}
+
+	@AfterThrowing("execution(public java.util.List<com.kenneth.springmvcboot.model.Alien> com.kenneth.springmvcboot.AlienController.getAliens(..))")
+	public void logException() {
+		LOGGER.error("AlienController getAliens have error");
 	}
 
 	@Before("execution(public String com.kenneth.springmvcboot.HomeController.home())")
